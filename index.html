@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy New Year</title>
+  <style>
+    body {
+      font-family: 'Cursive', sans-serif;
+      background: linear-gradient(135deg, #ff6f91, #ff9a9e);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      overflow: hidden;
+      animation: backgroundFade 10s infinite alternate; /* Smooth background transition */
+    }
+
+    .frame {
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 20px;
+      padding: 40px;
+      text-align: center;
+      width: 80%;
+      max-width: 600px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      animation: bounceIn 2s ease-out; /* Frame animation */
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: #ff1493;
+      margin-bottom: 20px;
+      animation: textGlow 1.5s infinite;
+    }
+
+    p {
+      font-size: 1.3rem;
+      margin: 20px 0;
+      line-height: 1.6;
+      color: black;
+    }
+
+    .heart {
+      font-size: 3rem;
+      color: #ff1493;
+      margin: 20px 0;
+      animation: scaleHeart 2s infinite;
+    }
+
+    .button {
+      background-color: #ff69b4;
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 25px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.3s;
+      text-decoration: none;
+    }
+
+    .button:hover {
+      background-color: #ff1493;
+      transform: scale(1.1);
+    }
+
+    /* Falling hearts animation */
+    @keyframes fallingHearts {
+      0% {
+        transform: translateY(-100%) scale(0.5);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(100vh) scale(1);
+        opacity: 0;
+      }
+    }
+
+    .falling-heart {
+      position: absolute;
+      color: #ff69b4;
+      font-size: 1.5rem;
+      animation: fallingHearts 6s infinite linear;
+      top: -10%;
+    }
+
+    .falling-heart:nth-child(2) { left: 20%; animation-delay: 1s; }
+    .falling-heart:nth-child(3) { left: 40%; animation-delay: 2s; }
+    .falling-heart:nth-child(4) { left: 60%; animation-delay: 3s; }
+    .falling-heart:nth-child(5) { left: 80%; animation-delay: 4s; }
+
+    /* Animations */
+    @keyframes textGlow {
+      0%, 100% {
+        text-shadow: 0 0 10px #ff69b4, 0 0 20px #ff69b4, 0 0 30px #ff69b4;
+      }
+      50% {
+        text-shadow: 0 0 5px #ff1493, 0 0 15px #ff1493, 0 0 25px #ff1493;
+      }
+    }
+
+    @keyframes scaleHeart {
+      0%, 100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.2);
+      }
+    }
+
+    @keyframes bounceIn {
+      0% {
+        transform: scale(0.5);
+        opacity: 0;
+      }
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    @keyframes backgroundFade {
+      0% {
+        background: linear-gradient(135deg, #ff6f91, #ff9a9e);
+      }
+      100% {
+        background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Falling hearts -->
+  <div class="falling-heart">??</div>
+  <div class="falling-heart">??</div>
+  <div class="falling-heart">??</div>
+  <div class="falling-heart">??</div>
+  <div class="falling-heart">??</div>
+
+  <div class="frame">
+    <h1>Happy New Year, JAHEERA ??</h1>
+    <p>
+      As we step into the new year, my heart is filled with love and gratitude for you. <br>
+      Here's to a year filled with happiness, laughter, and endless memories together.
+    </p>
+    <div class="heart">??</div>
+    <p>
+     Starting a new year with you , You have making me a better person day by day 
+    </p>
+    <!-- Link to Aaaaa.html -->
+    <a href="page2.html" class="button">click here</a>
+  </div>
+</body>
+</html>

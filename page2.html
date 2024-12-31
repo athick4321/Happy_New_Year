@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Year Surprise</title>
+  <style>
+    body {
+      font-family: cursive;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      overflow: hidden;
+      animation: backgroundFade 10s infinite alternate;
+    }
+
+    .frame {
+      border: 8px solid #ff69b4;
+      border-radius: 20px;
+      padding: 50px;
+      background-color: rgba(255, 255, 255, 0.9);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+      width: 50%;
+      height: 50%;
+      max-width: 300px;
+      max-height: 400px;
+      overflow: hidden;
+      animation: bounceIn 2s ease-out;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    h2, h3 {
+      color: #AA336A;
+      animation: textGlow 1.5s infinite;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      animation: scaleText 3s infinite;
+    }
+
+    h3 {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+
+    .button {
+      font-family: cursive;
+      font-size: 1.2rem;
+      text-decoration: none;
+      padding: 12px 25px;
+      background-color: #ff69b4;
+      color: white;
+      border-radius: 8px;
+      border: none;
+      display: inline-block;
+      margin-top: 15px;
+      cursor: pointer;
+      animation: buttonPulse 2s infinite;
+    }
+
+    .button:hover {
+      background-color: #ff1493;
+      transform: scale(1.1);
+    }
+
+    /* Falling hearts animation */
+    @keyframes fallingHearts {
+      0% {
+        transform: translateY(-100%) scale(0.5);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(100vh) scale(1);
+        opacity: 0;
+      }
+    }
+
+    .heart {
+      position: absolute;
+      color: #ff69b4;
+      font-size: 1.5rem;
+      animation: fallingHearts 5s infinite linear;
+      top: -10%;
+    }
+
+    .heart:nth-child(2) { left: 20%; animation-delay: 1s; }
+    .heart:nth-child(3) { left: 40%; animation-delay: 2s; }
+    .heart:nth-child(4) { left: 60%; animation-delay: 3s; }
+    .heart:nth-child(5) { left: 80%; animation-delay: 4s; }
+
+    /* Animations */
+    @keyframes textGlow {
+      0%, 100% {
+        text-shadow: 0 0 10px #ff69b4, 0 0 20px #ff69b4, 0 0 30px #ff69b4;
+      }
+      50% {
+        text-shadow: 0 0 5px #ff1493, 0 0 15px #ff1493, 0 0 25px #ff1493;
+      }
+    }
+
+    @keyframes bounceIn {
+      0% {
+        transform: scale(0.5);
+        opacity: 0;
+      }
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    @keyframes buttonPulse {
+      0%, 100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.1);
+      }
+    }
+
+    @keyframes scaleText {
+      0%, 100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.1);
+      }
+    }
+
+    @keyframes backgroundFade {
+      0% {
+        background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      }
+      100% {
+        background: linear-gradient(135deg, #fbc2eb, #a6c1ee);
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Falling hearts -->
+  <div class="heart">??</div>
+  <div class="heart">??</div>
+  <div class="heart">??</div>
+  <div class="heart">??</div>
+  <div class="heart">??</div>
+
+  <div class="frame">
+    <h2>Dear love ??  </h2>
+    <h3 id="message">Wishing you a very happy new year, Jaheera! ??</h3>
+    <button id="nextPage" class="button" onclick="nextMessage()">Next</button>
+    <a href="page3.html" id="goToPage3" class="button" style="display: none;">Next</a>
+  </div>
+
+  <script>
+    let currentStep = 0;
+    const messages = [
+      "Wishing you a very happy new year, Jaheera!",
+      "This year may come to end ",
+      "But my  love will stay just the same as it was before.",
+      "I want to spend the rest of my life with you.",
+      "I wish to receive even more love and care from you in the upcoming  years.",
+      "Thanks for making me smile each and every day."
+    ];
+
+    function nextMessage() {
+      currentStep++;
+      if (currentStep < messages.length) {
+        document.getElementById("message").textContent = messages[currentStep];
+      } else {
+        document.getElementById("message").textContent = "Thanks for being with me all this time ";
+        document.getElementById("nextPage").style.display = "none";
+        document.getElementById("goToPage3").style.display = "inline-block";
+      }
+    }
+  </script>
+</body>
+</html>
